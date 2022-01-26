@@ -1,7 +1,7 @@
 const data = require('../data/zoo_data');
 
 function countEntrants(entrants) {
-  entrants.reduce((accumulator, currentValue) => {
+  const pessoas = entrants.reduce((accumulator, currentValue) => {
     if (currentValue.age < 18) {
       accumulator.child += 1;
     } else if (currentValue.age < 50) {
@@ -12,6 +12,7 @@ function countEntrants(entrants) {
     return accumulator;
   // aqui eu coloco o parâmetro para o acumulador começar sendo esse objeto com as propriedades que preciso. Cada vez que o currentValue entrar em uma condição de idade, ele será adicionado na propriedade respectiva.
   }, { adult: 0, child: 0, senior: 0 });
+  return pessoas;
 }
 
 function calculateEntry(entrants) {
