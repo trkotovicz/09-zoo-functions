@@ -69,4 +69,11 @@ function getSchedule(scheduleTarget) {
   return operatingHours();
 }
 
+/*
+Referência
+.includes
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+Tive ajuda do Imar Mendes para realização do exercício
+ */
+
 module.exports = getSchedule;
