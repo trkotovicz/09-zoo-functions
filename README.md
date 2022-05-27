@@ -19,10 +19,9 @@ Foi implementado várias funções para atender aos requisitos propostos e garan
 
 ---
 
-### 1. Implemente a função `getSpeciesByIds`
+### `getSpeciesByIds`
 
 Esta função é responsável pela busca das espécies de animais por id. Ela retorna um array contendo as espécies referentes aos ids passados como parâmetro, podendo receber um ou mais ids.
-- O parâmetro desta função pode ser alterado para atender ao requisito proposto.
 
 **O que foi avaliado**
 - Caso receba nenhum parâmetro, necessário retornar um array vazio;
@@ -31,18 +30,17 @@ Esta função é responsável pela busca das espécies de animais por id. Ela re
 
 ---
 
-### 2. Implemente a função `getAnimalsOlderThan`
+### `getAnimalsOlderThan`
 
 Esta função, a partir do nome de uma espécie e uma idade mínima, verifica se todos os animais daquela espécie possuem a idade mínima especificada.
-- Deve retornar um valor booleano.
+- A função retorna um valor booleano.
 
 **O que foi avaliado**
-- Ao passar o nome de uma espécie e uma idade, testa se todos os animais desta
-espécie possuem a idade mínima especificada.
+- Ao passar o nome de uma espécie e uma idade, testa se todos os animais desta espécie possuem a idade mínima especificada.
 
 ---
 
-### 3. Implemente a função `getEmployeeByName`
+### `getEmployeeByName`
 
 Esta função é responsável pela busca das pessoas colaboradoras através do primeiro ou do último nome delas
 
@@ -53,34 +51,23 @@ Esta função é responsável pela busca das pessoas colaboradoras através do p
 
 ---
 
-### 4. Implemente a função `getRelatedEmployees`
+### `getRelatedEmployees`
 
-Considerando a boa prática de dividir o código em partes menores, apresentamos a função `getRelatedEmployees` em que você deverá dividí-la em duas funções: 
-1 - `isManager` - que será responsável por verificar se uma pessoa colaboradora é gerente ou não. O retorno dessa função deve ser um booleano: `true` ou `false`;
-2 - `getRelatedEmployees` - que utiliza a primeira função para apresentar as seguintes saídas: 
+Considerando a boa prática de dividir o código em partes menores, a função `getRelatedEmployees` é dividida em duas funções: 
+`isManager` - responsável por verificar se uma pessoa colaboradora é gerente ou não. O retorno dessa função deve ser um booleano: `true` ou `false`;
+`getRelatedEmployees` - que utiliza a primeira função para apresentar as seguintes saídas: 
   * se for uma pessoa colaboradora gerente, deve retornar um array contendo os nomes das pessoas colaboradoras que ela é responsável;
   * se **não** for uma pessoa colaboradora gerente, deverá ser lançado um erro gerado com a função construtora **Error** da biblioteca padrão do JavaScript com a mensagem **"O id inserido não é de uma pessoa colaboradora gerente!"**.
-Exemplo:
-```javascript
-throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
-```
 
-  - Retorna um array contendo nome e sobrenome das pessoas colaboradoras gerenciadas por determinada pessoa com cargo de gerência.
-  Exemplo de output:
-  ```javascript
-  [ 'Burl Bethea', 'Ola Orloff', 'Emery Elser' ];
-  ```
-  - Dispara um erro com a mensagem: "O id inserido não é de uma pessoa colaboradora gerente!".
-
-  **O que foi avaliado**
-  - Retorna `true` se o id passado for de um gerente;
-  - Retorna `false` se o id passado não for de um gerente;
-  - Se o id passado for de um gerente, retorna um array contendo nome e sobrenome das pessoas colaboradoras que ela é responsável;
-  - Se o id passado **não** for de um gerente, dispara um erro com a mensagem: "O id inserido não é de uma pessoa colaboradora gerente!".
+**O que foi avaliado**
+- Retorna `true` se o id passado for de um gerente;
+- Retorna `false` se o id passado não for de um gerente;
+- Se o id passado for de um gerente, retorna um array contendo nome e sobrenome das pessoas colaboradoras que ela é responsável;
+- Se o id passado **não** for de um gerente, dispara um erro com a mensagem: "O id inserido não é de uma pessoa colaboradora gerente!".
 
 ---
 
-### 5. Implemente a função `countAnimals`
+### `countAnimals`
 
   Esta função é responsável por contabilizar a quantidade de animais de cada espécie.
   - Se nenhum argumento for passado, retorna um objeto cujo o nome de cada espécie é uma chave desse objeto, e o total de animais dessa espécie é o seu valor;
@@ -88,14 +75,13 @@ throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
   - Com o argumento `{ specie: 'giraffes', sex: 'female' }`, retorna um número, a quantidade de girafas do sexo feminino.
 
 **O que foi avaliado**
-
-  - Sem parâmetros, retorna as espécies e sua quantidade;
-  - Recebendo como parâmetro um objeto com a chave `specie`, retorna um número, a quantidade de animais daquela espécie;
-  - Recebendo como parâmetro um objeto com a chave `specie` e `sex`, retorna um número, a quantidade de animais daquela espécie, no sexo selecionado.
+- Sem parâmetros, retorna as espécies e sua quantidade;
+- Recebendo como parâmetro um objeto com a chave `specie`, retorna um número, a quantidade de animais daquela espécie;
+- Recebendo como parâmetro um objeto com a chave `specie` e `sex`, retorna um número, a quantidade de animais daquela espécie, no sexo selecionado.
 
 ---
 
-### 6. Implemente a função `calculateEntry`
+### `calculateEntry`
 
 Esta função irá receber um array de visitantes no seguinte formato:
 ```javascript
@@ -114,24 +100,7 @@ Você deve isolar a parte da lógica na função `countEntrants` que se encontra
 * Pessoas com idade maior ou igual 50 anos são classificadas como pessoas com mais idade (senior).
 O retorno da função deverá ser um objeto no seguinte formato: `{ child: 3, adult: 2, senior: 1 }`.
 
-**Exemplo de uso da função `countEntrants`:**
-```javascript
-countEntrants(entrants);
-```
-**Saída:**
-```json
-{ "child": 3, "adult": 2, "senior": 1 }
-```
 Após terminar a implementação da função `countEntrants` você deverá utilizá-la para implementar a função `calculateEntry`. Esta deverá receber um array de visitantes e a partir da quantidade de visitantes e faixa etária de cada um, deverá retornar o valor total a ser cobrado.
-**Exemplo de uso da função `calculateEntry`:**
-```javascript
-calculateEntry(entrants);
-```
-**Saída:**
-```javascript
-187.94
-```
-
 - Ambas funções recebem como parâmetro um array contendo objetos que representam pessoas.
 
 **O que foi avaliado**
@@ -142,10 +111,9 @@ calculateEntry(entrants);
 
 ---
 
-### 7. Implemente a função `getAnimalMap`
+### `getAnimalMap`
 
 A função é responsável pelo mapeamento geográfico das espécies e seus animais, podendo ainda filtrá-los por ordem alfabética e sexo.
-- Analise o teste unitário para entender os retornos que são esperados para esta função.
 
 **O que foi avaliado**
 - Sem parâmetros, retorna animais categorizados por localização;
@@ -157,17 +125,12 @@ A função é responsável pelo mapeamento geográfico das espécies e seus anim
 
 ---
 
-### 8. Implemente a função `getSchedule`
+### `getSchedule`
 
 A função é responsável por disponibilizar as informações de horário dos animais em uma consulta para o usuário, que pode querer ter acesso ao cronograma da semana, de um dia ou de um animal em específico.
-
-**Observações técnicas**
-
-- Analise os testes unitários para entender os retornos que são esperados para esta função;
 - Quebre o problema em funções menores para que fique mais simples de administrar a responsabilidade de cada uma delas.
 
-**O que será avaliado**
-
+**O que foi avaliado**
 - Sem parâmetros, retorna os horários para cada dia e quais animais estarão disponíveis;
 - Com parâmetros que não sejam nem um animal e nem um dia, retorna os horários para cada dia e quais animais estarão disponíveis;
 - Se um único dia for passado, retorna os horários para aquele dia e quais animais estarão disponíveis;
@@ -175,7 +138,7 @@ A função é responsável por disponibilizar as informações de horário dos a
  
 ---
 
-### 9. Implemente a função `getOldestFromFirstSpecies`
+### `getOldestFromFirstSpecies`
 
 A função busca por informações do animal mais velho da primeira espécie gerenciada pela pessoa colaboradora do parâmetro.
 
@@ -184,7 +147,7 @@ A função busca por informações do animal mais velho da primeira espécie ger
 
 ---
 
-### 10. Implemente a função `getEmployeesCoverage`
+### `getEmployeesCoverage`
 
 Esta função será responsável por associar informações de cobertura das pessoas funcionárias.
 A cobertura deverá ser representada por um objeto com as seguintes propriedades:
@@ -199,54 +162,8 @@ A cobertura deverá ser representada por um objeto com as seguintes propriedades
 A função deve receber um objeto de opções que determinará seu comportamento, sendo:
 * **name**: O nome ou sobrenome da pessoa a ser buscada
 * **id**: O id da pessoa a ser buscada
-**Exemplos de uso da função `getEmployeesCoverage`:**
-```javascript
-getEmployeesCoverage({ name: 'Sharonda' });
-getEmployeesCoverage({ name: 'Spry' });
-getEmployeesCoverage({ id: '4b40a139-d4dc-4f09-822d-ec25e819a5ad' });
-```
-**Saída:**
-```json
-{
-  "id": "4b40a139-d4dc-4f09-822d-ec25e819a5ad",
-  "fullName": "Sharonda Spry",
-  "species": [ "otters", "frogs" ],
-  "locations": [ "SE", "SW" ]
-}
-```
-Ao ser chamada sem argumentos, deverá retornar um array com a cobertura de todas as pessoas funcionárias:
-**Exemplo:**
-```javascript
-getEmployeesCoverage();
-```
-**Saída:**
-```javascript
-[
-  {
-    "id": "c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1",
-    "fullName": "Nigel Nelson",
-    "species": [ "lions", "tigers" ],
-    "locations": [ "NE", "NW" ],
-  },
-  {
-    "id": "0e7b460e-acf4-4e17-bcb3-ee472265db83",
-    "fullName": "Burl Bethea",
-    "species": [ "lions", "tigers", "bears", "penguins" ],
-    "locations": [ "NE", "NW", "NW", "SE" ],
-  },
-  {
-    "id": "fdb2543b-5662-46a7-badc-93d960fdc0a8",
-    "fullName": "Ola Orloff",
-    "species": [ "otters", "frogs", "snakes", "elephants" ],
-    "locations": [ "SE", "SW", "SW", "NW" ],
-  },
-  //[...]
-];
-```
-Caso nenhuma pessoa seja encontrada com o nome, sobrenome ou id, deverá ser lançado um erro gerado com a função construtora **Error** da biblioteca padrão do JavaScript com a mensagem **"Informações inválidas"**. Exemplo:
-```javascript
-throw new Error('Informações inválidas');
-```
+Ao ser chamada sem argumentos, deverá retornar um array com a cobertura de todas as pessoas funcionárias.
+Caso nenhuma pessoa seja encontrada com o nome, sobrenome ou id, deverá ser lançado um erro gerado com a função construtora **Error** da biblioteca padrão do JavaScript com a mensagem **"Informações inválidas"**.
 - Ao receber o objeto de opções com a propriedade name, procura a pessoa funcionária correspondente;
 - A opção name deverá aceitar nome e sobrenome para realizar a busca;
 - Ao chamar a função sem argumentos ela deve retornar um array com a cobertura de todas as pessoas funcionárias.
