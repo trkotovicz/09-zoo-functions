@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do projeto Zoo Functions!
 
-Esse é um projeto de ES6 e Higher Order Functions e foi desenvolvido no curso de desenvolvimento web da Trybe.
+Esse é um projeto de ES6, Higher Order Functions e lógica de programação.
 
 ### Habilidades
 
