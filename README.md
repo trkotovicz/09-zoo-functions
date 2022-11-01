@@ -4,7 +4,7 @@ Esse é um projeto de ES6, Higher Order Functions e lógica de programação.
 
 ### Habilidades
 
-Neste projeto, foi verificado se sou capaz de:
+Neste projeto, fui capaz de:
 - Produzir código legível, conciso e expressivo utilizando as novas funcionalidades do ES6;
 - Utilizar as _Higher Order Functions_ para manipular e criar arrays;
 - Escolher a _Higher Order Function_ mais adequada para a obtenção de um resultado esperado;
